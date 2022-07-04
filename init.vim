@@ -16,7 +16,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'tpope/vim-sensible'
-Plug 'junegunn/seoul256.vim'
+Plug 'jnurmine/Zenburn'
+" Plug 'junegunn/seoul256.vim'
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -33,8 +35,11 @@ call plug#end()
 
 
 " Set Theme
-let g:seoul256_background = 234
-colo seoul256
+set background=light
+" colorscheme PaperColor
+colors zenburn
+" let g:seoul256_background = 254
+" colo seoul256
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
@@ -100,7 +105,7 @@ require('bufferline').setup {
         return true
       end
     end,
-    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left"}},
+    offsets = {{filetype = "nerdtree"}},
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = true,
